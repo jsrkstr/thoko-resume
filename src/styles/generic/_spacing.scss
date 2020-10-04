@@ -1,0 +1,90 @@
+/* # =================================================================
+   # Set up for global spacing classes.
+   # ================================================================= */
+
+/*
+    This is similar to vuetify @see https://vuetifyjs.com/en/layout/spacing
+    It will allow us to use class names like: ml-0, pt-1, etc.
+*/
+
+$spacer : 20px;
+
+$spacers : (
+        auto: auto,
+        0: 0,
+        1: 0.25,
+        2: 0.5,
+        3: 1,
+        4: 1.5,
+        5: 3
+);
+
+$spacers-x : $spacers;
+$spacers-y : $spacers;
+
+$spacers-list : map-keys($spacers);
+
+// todo: remove important after refactoring components
+@mixin spacer-size {
+    @each $i in $spacers-list {
+        $condition : map-get($spacers-x, $i) != auto;
+
+        $x-value : map-get($spacers-x, $i);
+        $y-value : map-get($spacers-y, $i);
+
+        $x : if($condition, $spacer * $x-value, $x-value);
+        $y : if($condition, $spacer * $y-value, $y-value);
+
+        .mt-#{$i} {
+            margin-top: $y !important;
+        }
+        .mr-#{$i} {
+            margin-right: $x !important;
+        }
+        .mb-#{$i} {
+            margin-bottom: $y !important;
+        }
+        .ml-#{$i} {
+            margin-left: $x !important;
+        }
+        .mx-#{$i} {
+            margin-left: $x !important;
+            margin-right: $x !important;
+        }
+        .my-#{$i} {
+            margin-top: $y !important;
+            margin-bottom: $y !important;
+        }
+        .ma-#{$i} {
+            margin: $y $x !important;
+        }
+
+        @if ($condition) {
+            .pt-#{$i} {
+                padding-top: $y !important;
+            }
+            .pr-#{$i} {
+                padding-right: $x !important;
+            }
+            .pb-#{$i} {
+                padding-bottom: $y !important;
+            }
+            .pl-#{$i} {
+                padding-left: $x !important;
+            }
+            .px-#{$i} {
+                padding-left: $x !important;
+                padding-right: $x !important;
+            }
+            .py-#{$i} {
+                padding-top: $y !important;
+                padding-bottom: $y !important;
+            }
+            .pa-#{$i} {
+                padding: $y $x !important;
+            }
+        }
+    }
+}
+
+@include spacer-size;

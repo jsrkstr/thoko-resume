@@ -1,0 +1,104 @@
+/* # =================================================================
+   # Font size
+   # ================================================================= */
+
+$mc-font-size: (
+    "xx-small"  :  ($mc-font-size-body) * .6,
+    "x-small"   :  ($mc-font-size-body) * .75,
+    "small"     :  ($mc-font-size-body) * .875,
+    "normal"    :  ($mc-font-size-body),
+    "big"       :  ($mc-font-size-body) * 1.1,
+    "x-big"     :  ($mc-font-size-body) * 1.2,
+    "titles"    :  ($mc-font-size-body) * 1.3,
+    "display-1" :  ($mc-font-size-body) * 1.5,
+    "display-2" :  ($mc-font-size-body) * 1.7
+);
+
+@function font-size($font-size) {
+    @return map-get($mc-font-size, $font-size);
+}
+
+/* # =================================================================
+   # Typography classes
+   # ================================================================= */
+
+/* Headers */
+
+$headers : (
+    subcaption : xx-small,
+    caption : x-small,
+    body-1 : small,
+    body-2 : normal,
+    subheading: big,
+    title: x-big,
+    headline: titles,
+    display-1: display-1,
+    display-2: display-2
+);
+
+@mixin headers {
+    @each $header in map-keys($headers){
+        .#{$header} {
+            font-size: font-size(map-get($headers, $header));
+        }
+    }
+}
+
+/* Font Family */
+
+.monospace {
+    font-family: monospace !important;
+}
+
+/* Font weight classes */
+
+.fw-4 {
+    font-weight: 400 !important;
+}
+
+.fw-5 {
+    font-weight: 500 !important;
+}
+
+.fw-6 {
+    font-weight: 600 !important;
+}
+
+.fw-7 {
+    font-weight: 700 !important;
+}
+
+
+/* # =================================================================
+   # Font Styles
+   #
+   # Available classes: fs-normal, fs-italic, fs-oblique
+   # ================================================================= */
+$font-styles: ( normal, italic, oblique );
+
+@mixin font-styles {
+    @each $style in $font-styles {
+        .fs-#{$style} {
+            font-style: $style;
+        }
+    }
+}
+
+/* # =================================================================
+   # Floats
+   #
+   # Available classes: float-none, float-left, float-right
+   # ================================================================= */
+$floats: ( none, left, right );
+
+@mixin floats {
+    @each $direction in $floats {
+        .float-#{$direction} {
+            float: $direction;
+        }
+    }
+}
+
+@include headers;
+@include font-styles;
+@include floats;

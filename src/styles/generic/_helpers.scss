@@ -1,0 +1,260 @@
+/* # =================================================================
+   # Display classes
+   #
+   # Available: d-flex, d-block, d-inline-block, d-inline-flex, d-contents
+   # ================================================================= */
+
+$displays : ( flex, block, inline-block, inline-flex, contents );
+
+@mixin display-class {
+    @each $display in $displays {
+        .d-#{$display} {
+            display: $display;
+        }
+    }
+}
+
+/* # =================================================================
+   # Flex wrap classes
+   #
+   # Available: flex-wrap, flex-nowrap
+   # ================================================================= */
+
+$flex-wrap : ( wrap, nowrap );
+
+@mixin f-wrap {
+    @each $wrap in $flex-wrap {
+        .flex-#{$wrap} {
+            flex-wrap: $wrap;
+        }
+    }
+}
+
+/* # =================================================================
+   # Flex align classes
+   #
+   # Available: align-start, align-end, align-center, align-baseline,
+   #            align-stretch
+   # ================================================================= */
+
+$flex-align : (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch
+);
+
+$align-items : map-keys($flex-align);
+
+@mixin f-align {
+    @each $alignment in $align-items {
+        .align-#{$alignment} {
+            @include align-items(map-get($flex-align, $alignment));
+        }
+    }
+}
+
+/* # =================================================================
+   # Flex justify classes
+   #
+   # Available: justify-start, justify-end, justify-center,
+   #            justify-space-between, justify-space-around
+   # ================================================================= */
+
+$flex-justify : (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        space-between: space-between,
+        space-around: space-around
+);
+
+$justify-items : map-keys($flex-justify);
+
+@mixin f-justify {
+    @each $justify in $justify-items {
+        .justify-#{$justify} {
+            @include justify-content(map-get($flex-justify, $justify));
+        }
+    }
+}
+
+/* # =================================================================
+   # Align Self classes
+   #
+   # Available: align-self-auto, align-self-start, align-self-end,
+   #            align-self-center, align-self-baseline, align-self-stretch
+   # ================================================================= */
+
+$self-alignments-map : (
+        auto: auto,
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch
+);
+
+$self-alignments : map-keys($self-alignments-map);
+
+@mixin f-align-self {
+    @each $alignment in $self-alignments {
+        .align-self#{$alignment} {
+            align-self: map-get($self-alignments-map, $alignment);
+        }
+    }
+}
+
+/* # =================================================================
+   # Other classes
+   # ================================================================= */
+
+.underline {
+    text-decoration: underline;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+// todo: replace with vuetify color classes inside each component
+/* text colors info */
+.danger-text {
+    color: get-color(red, darken-4);
+}
+.notice-text {
+    color: get-color(cyan, darken-3);
+}
+.success-text {
+    color: get-color(green, darken-2);
+}
+
+/* SVG text anchors */
+.anchor-middle {
+    text-anchor: middle;
+}
+
+.anchor-end {
+    text-anchor: end;
+}
+
+.anchor-start {
+    text-anchor: start;
+}
+
+// todo: consider moving to elements/_selects.scss
+.select__clear-btn {
+    position: relative;
+    right: 40px;
+    top: 7px;
+    background-color: $white;
+    padding: 0;
+    cursor: pointer;
+    color: get-color(grey, base);
+    &:hover {
+        color: inherit;
+    }
+}
+
+/* # =================================================================
+   # Text Position classes
+   #
+   # Available: static, relative, fixed, absolute, sticky
+   # ================================================================= */
+
+$positions : (static, relative, fixed, absolute, sticky);
+
+@mixin position {
+    @each $position in $positions {
+        .#{$position} {
+            position: $position !important;
+        }
+    }
+}
+
+/* # =================================================================
+   # Percentage Width classes
+   #
+   # Available: xs-width-10, xs-width-20, ..., lg-width-100
+   # ================================================================= */
+
+@mixin fixed-width {
+    @each $size in $screen-sizes {
+
+        @media (min-width: #{$size}) {
+            .#{get-class-size-prefix($size)}-width-auto {
+                width: auto;
+            }
+
+            @for $i from 1 through 10 {
+                .#{get-class-size-prefix($size)}-width-#{$i * 10} {
+                    width: percentage($i / 10);
+                }
+            }
+        }
+
+    }
+}
+
+/* # =================================================================
+   # Color classes
+   #
+   # Available: grey, grey light-1, grey light-2, ...
+   # ================================================================= */
+@mixin color-classes {
+    @each $color in get-colors-list() {
+        @if length(get-color-shades($color)) {
+            @each $shade in get-color-shades($color) {
+                @if $shade == base {
+                    .#{$color} {
+                        background-color: get-color($color, $shade);
+                        border-color: get-color($color, $shade);
+                    }
+
+                    .#{$color}--text {
+                        color: get-color($color, $shade);
+                    }
+                }
+                @else {
+                    .#{$color}.#{$shade} {
+                        background-color: get-color($color, $shade);
+                        border-color: get-color($color, $shade);
+                    }
+
+                    .#{$color}--text.#{$shade} {
+                        color: get-color($color, $shade);
+                    }
+                }
+            }
+        }
+        @else {
+            .#{$color} {
+                background-color: get-color-value($color);
+                border-color: get-color-value($color);
+            }
+            .#{$color}--text {
+                color: get-color-value($color);
+            }
+        }
+    }
+    @each $color in get-monochrome-list() {
+        .#{$color} {
+            background-color: map-get($monochrome, $color);
+            border-color: map-get($monochrome, $color);
+        }
+        .#{$color}--text {
+            color: map-get($monochrome, $color);
+        }
+    }
+}
+
+
+@include color-classes;
+@include display-class;
+@include f-wrap;
+@include f-align;
+@include f-justify;
+@include f-align-self;
+@include position;
+@include fixed-width;

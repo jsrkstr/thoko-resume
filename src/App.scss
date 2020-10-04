@@ -1,0 +1,196 @@
+// Generic
+@import "styles/_main";
+
+// @font-face {
+//   font-family: 'Ubuntu';
+//   font-style: italic;
+//   font-weight: 400;
+//   font-display: swap;
+//   src: local('Ubuntu Italic'), local('Ubuntu-Italic'), url(fonts/hinted-Ubuntu-Italic.ttf) format('truetype');
+// }
+
+// @font-face {
+//   font-family: 'Ubuntu';
+//   font-style: normal;
+//   font-weight: 400;
+//   font-display: swap;
+//   src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(fonts/hinted-Ubuntu-Regular.ttf) format('truetype');
+// }
+
+// @font-face {
+//   font-family: 'Ubuntu';
+//   font-style: normal;
+//   font-weight: 700;
+//   font-display: swap;
+//   src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url(fonts/hinted-Ubuntu-Bold.ttf) format('truetype');
+// }
+
+.app {
+  width: 1064px;
+  margin: auto;
+}
+
+.layout {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.flex {
+  flex: 1 1 auto;
+}
+
+.content {
+  padding: 0 50px;
+}
+
+.column {
+  max-width: 50%;
+  box-sizing: border-box;
+}
+
+.column-left {
+  padding-right: 34px;
+}
+
+.column-right {
+  padding-left: 34px;
+}
+
+.header-component {
+  padding: 0 50px;
+}
+
+.user-info {
+  margin-left: 35px;
+  padding-right: 40px;
+}
+
+.user-picture {
+  width: 140px;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 42px !important;
+  min-height: 42px;
+  line-height: 44px !important;
+}
+
+.user-title {
+  color: #666766 !important;
+  font-size: 22px !important;
+  min-height: 22px;
+  line-height: 24px !important;
+  padding: 6px 0px;
+}
+
+.user-summary {
+  font-size: 16px !important;
+  min-height: 16px;
+  line-height: 20px !important;
+}
+
+.info-bar {
+  background-color: #f1f1f1;
+  padding: 15px 50px;
+  text-align: center;
+}
+
+.info-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  right: 10px;
+  vertical-align: bottom;
+}
+
+.layout-item-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #509ed3;
+}
+
+.theme-title-1 {
+  font-size: 22px !important;
+  min-height: 22px;
+  line-height: 24px !important;
+  font-weight: 700;
+}
+
+.theme-title-2 {
+  font-size: 22px !important;
+  min-height: 22px;
+  line-height: 24px !important;
+}
+
+.work-ex-item {
+  padding-left: 18px;
+}
+
+.work-ex-item-icon {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+
+.theme-label {
+  font-size: 14px !important;
+  min-height: 14px;
+  line-height: 16px !important;
+  font-style: italic;
+  color: #666766;
+}
+
+.theme-label.active {
+  color: #509ed3;
+}
+
+.theme-body-1 {
+  font-size: 16px !important;
+  min-height: 16px;
+  line-height: 20px !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.chip {
+  font-weight: 400;
+  font-style: normal;
+  padding: 6px 14px;
+  background-color: #a7cee9;
+  border-radius: 6px;
+  margin: 0 10px 8px 0;
+}
+
+.chip.outlined {
+  border-width: 2px;
+  border-color: #b2b2b2;
+  border-style: solid;
+  background-color: inherit;
+}
+
+.skill-title {
+  font-size: 18px !important;
+  min-height: 18px;
+  line-height: 22px !important;
+  font-weight: 700;
+}
+
+.certificate-title {
+  font-size: 20px !important;
+  min-height: 20px;
+  line-height: 22px !important;
+}
+
+.link-reset {
+  text-decoration: none;
+  color: inherit;
+}

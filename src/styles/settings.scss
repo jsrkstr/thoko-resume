@@ -1,0 +1,66 @@
+/* ---------------- */
+/*     SETTINGS     */
+/* ---------------- */
+
+// Fonts
+// @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+$mc-font    : 'Montserrat', arial, sans-serif;
+$mc-font-size-body : 14px;
+
+//Breakpoints
+$tablet-breakpoint       : 1130px;
+$breakpoint              : 980px;
+//$breakpoint         : 1130px;
+//$breakpoint-b       : 767px;
+
+
+/* # =================================================================
+   # Height
+   # ================================================================= */
+
+$mc-height: (
+    "top-menu"        : 40px,
+    "top-header"      : 65px,
+);
+@function height($height) {
+    @return map-get($mc-height, $height);
+}
+
+// Border
+$mc-border: (
+    "top-menu"        : 40px,
+);
+@function border($border) {
+    @return map-get($mc-border, $border);
+}
+
+// Padding
+$mc-padding: (
+    "top-menu"        : 40px,
+);
+@function padding($padding) {
+    @return map-get($mc-padding, $padding);
+}
+
+// Breakpoints
+$mc-mobile    : new-breakpoint(max-width 1023px);
+$mc-desktop   : new-breakpoint(min-width 1024px);
+$screen-min-sizes-to-prefix : (
+    0px: 'xs',
+    $breakpoint: 'md',
+    $tablet-breakpoint: 'lg'
+);
+
+@function get-screen-size-list() {
+    @return map-keys($screen-min-sizes-to-prefix);
+}
+
+@function get-class-size-prefix($size) {
+    @return map-get($screen-min-sizes-to-prefix, $size)
+}
+
+$screen-sizes : get-screen-size-list();
+
+// a borrar
+$mc-data-activated-color: #00ff00;
+$mc-data-deactivated-color: #ff0000;
