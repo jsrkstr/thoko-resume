@@ -11,7 +11,7 @@ export default class Header extends Component {
         <div className="flex user-info">
           <div className="user-name">Sachin Saluja</div>
           <div className="user-title">Frontend leader & Product manager</div>
-          <div className="user-summary">
+          <div className="user-summary theme-body-1">
             Motivated team leader and product manager with 8+ years of
             experience with web products. Successfully managed and developed
             several web projects, including E-commerce portal and Ads DSP

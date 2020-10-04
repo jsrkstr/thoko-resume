@@ -10,7 +10,7 @@ export default class InfoBar extends Component {
       <div className="info-bar">
         <div className="layout">
           <div className="flex">
-            <img alt="email" src={email} className="info-icon" />
+            <img alt="email" src={email} className="info-icon info-icon-email" />
             <a href="mailto:sachin.saluja@gmail.com" className="link-reset">
               sachin.saluja@gmail.com
             </a>
@@ -24,7 +24,7 @@ export default class InfoBar extends Component {
             Paris, France
           </div>
           <div className="flex">
-            <img alt="linkedin" src={linkedin} className="info-icon" />
+            <img alt="linkedin" src={linkedin} className="info-icon info-icon-in" />
             <a
               href="https://www.linkedin.com/in/salujasachin"
               className="link-reset"

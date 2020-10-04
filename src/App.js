@@ -124,7 +124,7 @@ class App extends React.Component {
       id: uuidv4(),
       title: "Modern Web",
       text:
-        "Good knowledge of base technologies of modern web (Javascipt, HTML, CSS)",
+        "Good knowledge of base technologies (Javascipt, HTML, CSS)",
     },
     {
       id: uuidv4(),
@@ -140,15 +140,15 @@ class App extends React.Component {
     },
     {
       id: uuidv4(),
-      title: "Design",
-      text:
-        "A particular appetite for Design in general and an ability to create mockups and work with a Web Designer",
-    },
-    {
-      id: uuidv4(),
       title: "Testing",
       text:
         "Knowledge of software testing (unit and / or integration testing, code quality, coverage)",
+    },
+    {
+      id: uuidv4(),
+      title: "Design",
+      text: "Ability to create mockups and work with a Web Designer",
+        // "A particular appetite for Design in general and an ability to create mockups and work with a Web Designer",
     },
     {
       id: uuidv4(),
@@ -280,10 +280,6 @@ class App extends React.Component {
     },
     {
       id: uuidv4(),
-      text: "Guitar",
-    },
-    {
-      id: uuidv4(),
       text: "Culture",
     },
     {
@@ -367,8 +363,8 @@ class App extends React.Component {
               content={
                 <div className="layout">
                   {this.languages.map((item) => (
-                    <div className="flex">
-                      <Language key={item.id} info={item} />
+                    <div className="flex" key={item.id}>
+                      <Language info={item} />
                     </div>
                   ))}
                 </div>
