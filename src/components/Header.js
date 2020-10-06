@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import picture from "../images/picture.jpeg";
+import picture from "../images/me.jpg";
 
 export default class Header extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class Header extends Component {
           <img alt="logo" src={picture} className="user-picture" />
         </div>
         <div className="flex user-info">
-          <div className="user-name">Sachin Saluja</div>
+          <div className="user-name" contentEditable>Sachin Saluja</div>
           <div className="user-title">Frontend leader & Product manager</div>
           <div className="user-summary theme-body-1">
             Motivated team leader and product manager with 8+ years of

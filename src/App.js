@@ -26,11 +26,12 @@ class App extends React.Component {
           id: uuidv4(),
           text:
             "Lead development of tool to manage Video Game lifecycle from idea to initial launch in just 3 months",
+          link: "https://sachinsaluja.fr/work/#homagames",
         },
         {
           id: uuidv4(),
           text:
-            "Organised, recruited and mentored a team of 3 developers to become competent and autonomous",
+            "Organised, recruited and mentored a team of 3 developers, 1 designer to become competent and autonomous",
         },
         {
           id: uuidv4(),
@@ -57,6 +58,7 @@ class App extends React.Component {
           id: uuidv4(),
           text:
             "Lead design and development of Frontend for successful Ad tech SaaS product used by 5+ clients and 200+ users",
+          link: "http://sachinsaluja.fr/work/#bidmotion-ads",
         },
         {
           id: uuidv4(),
@@ -88,6 +90,7 @@ class App extends React.Component {
           id: uuidv4(),
           text:
             "Lead major transition of E-commerce website from server rendered to Single-Page application (SPA), used by 1+ million users everyday",
+          link: "http://sachinsaluja.fr/work/#paytm-main",
         },
         {
           id: uuidv4(),
@@ -114,6 +117,7 @@ class App extends React.Component {
           id: uuidv4(),
           text:
             "Developed various web based Social games on Facebook platform, supporting 10,000+ realtime users",
+          link: "http://sachinsaluja.fr/work/#playup",
         },
       ],
     },
@@ -123,8 +127,7 @@ class App extends React.Component {
     {
       id: uuidv4(),
       title: "Modern Web",
-      text:
-        "Good knowledge of base technologies (Javascipt, HTML, CSS)",
+      text: "Good knowledge of base technologies (Javascipt, HTML, CSS)",
     },
     {
       id: uuidv4(),
@@ -148,7 +151,7 @@ class App extends React.Component {
       id: uuidv4(),
       title: "Design",
       text: "Ability to create mockups and work with a Web Designer",
-        // "A particular appetite for Design in general and an ability to create mockups and work with a Web Designer",
+      // "A particular appetite for Design in general and an ability to create mockups and work with a Web Designer",
     },
     {
       id: uuidv4(),
@@ -209,7 +212,7 @@ class App extends React.Component {
     //   id: uuidv4(),
     //   text: "Apollo",
     // },
-    
+
     {
       id: uuidv4(),
       text: "GIT",
